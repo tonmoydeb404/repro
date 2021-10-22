@@ -1,0 +1,198 @@
+.card {
+    --gap: 2rem;
+    background-color: var(--foreground);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    position: relative;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.card_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card_title {
+    flex-grow: 1;
+}
+.card_title:hover,
+.card_title > a:hover {
+    color: #0db00a;
+}
+.card_menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    text-align: right;
+    background-color: var(--background);
+    z-index: 90;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+.card_menu_item {
+    padding: 1rem 2rem;
+    background: transparent;
+    cursor: pointer;
+}
+.card_menu_item:hover {
+    background-color: var(--fontcolor);
+    color: var(--background);
+}
+.card_menu:not(.hidden) {
+    -webkit-animation: animateMenu 0.3s linear;
+    animation: animateMenu 0.3s linear;
+}
+.card_menu.hidden {
+    display: none;
+}
+@-webkit-keyframes animateMenu {
+    from {
+        opacity: 0;
+        top: 100px;
+    }
+}
+@keyframes animateMenu {
+    from {
+        opacity: 0;
+        top: 100px;
+    }
+}
+.card_menu_btn {
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    transition: var(--transition);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.card_menu_btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+.card_menu_btn:active,
+.card_menu_btn:focus {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+.card_text {
+    font-weight: 400;
+    opacity: 0.8;
+}
+.card_info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card_info_item {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5px;
+    font-size: 1.4rem;
+    padding: 0.6rem 1rem;
+    background-color: var(--background);
+    border-radius: 5px;
+}
+.card_info_icon {
+    font-size: 2rem;
+}
+.card_progress {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.card_progress_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card_progress_title {
+    flex-grow: 1;
+}
+.card_progress_info {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5px;
+    font-size: 1.4rem;
+    padding: 0.6rem 1rem;
+    background-color: #0db00a;
+    border-radius: 5px;
+}
+.card_progress_info_icon {
+    font-size: 2rem;
+}
+.card_progress_wrapper {
+    width: 100%;
+    height: 6px;
+    display: flex;
+    align-items: stretch;
+    background-color: var(--background);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card_progress_bar {
+    background-color: #0db00a;
+}
+.card_footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card_tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.card_tag {
+    padding: 1rem;
+    border-radius: 50%;
+}
+.card_btn {
+    border: none;
+    background-color: var(--fontcolor);
+    color: var(--background);
+}
+.card_btn_check {
+    position: relative;
+    border: none;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.card_btn_check::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--foreground);
+    pointer-events: none;
+}
+.card_btn_check:checked:after {
+    background-color: #0db00a;
+}
+body[data-theme="dark"] .card_menu_btn:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+body[data-theme="dark"] .card_menu_btn:active,
+body[data-theme="dark"] .card_menu_btn:focus {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+body[data-theme="dark"] .card_progress_info {
+    background-color: var(--background);
+}
+body[data-theme="dark"] .card_btn {
+    background-color: var(--background);
+    color: var(--fontcolor);
+}

@@ -1,0 +1,12 @@
+.searchbox {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.searchbox .input {
+    flex-grow: 1;
+}
+.searchbox .input_box {
+    margin-top: 0;
+}

@@ -1,0 +1,12 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.nav_actions {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+}

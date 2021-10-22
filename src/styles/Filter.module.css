@@ -1,0 +1,329 @@
+.filter {
+    display: flex;
+    align-items: stretch;
+    gap: 2rem;
+}
+.filter_select {
+    outline: none;
+    border: none;
+    background-color: var(--foreground);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    color: inherit;
+}
+.filter_wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow-x: auto;
+}
+.filter_wrapper::-webkit-scrollbar {
+    width: 100%;
+    height: 4px;
+}
+.filter_wrapper::-webkit-scrollbar-thumb {
+    background: rgba(39, 39, 39, 0.2);
+    border-radius: 5px;
+}
+.filter_wrapper::-webkit-scrollbar-thumb:hover {
+    background: #272727;
+}
+body[data-theme="dark"] .filter_wrapper::-webkit-scrollbar-thumb {
+    background-color: rgba(249, 249, 249, 0.5);
+}
+body[data-theme="dark"] .filter_wrapper::-webkit-scrollbar-thumb:hover {
+    background: #f9f9f9;
+}
+
+.filter_icon {
+    padding: 0.7rem;
+    border-radius: 50%;
+}
+
+/* FILTER ITEM STYLE */
+.filter_item {
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.filter_item[data-color="blue"] {
+    border-color: #007bec;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="blue"] > div.filter_icon {
+    background-color: #007bec;
+}
+.filter_item[data-color="blue"] > span.filter_icon {
+    color: #007bec;
+}
+.filter_item[data-color="blue"]:hover {
+    background-color: #007bec;
+}
+.filter_item[data-color="blue"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="blue"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="blue"][data-active="true"] {
+    background-color: #007bec;
+    color: #f9f9f9;
+}
+.filter_item[data-color="blue"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="blue"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="blue"][data-active="true"]:hover {
+    background-color: #0060b9;
+}
+body[data-theme="dark"] .filter_item[data-color="blue"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="green"] {
+    border-color: #0db00a;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="green"] > div.filter_icon {
+    background-color: #0db00a;
+}
+.filter_item[data-color="green"] > span.filter_icon {
+    color: #0db00a;
+}
+.filter_item[data-color="green"]:hover {
+    background-color: #0db00a;
+}
+.filter_item[data-color="green"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="green"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="green"][data-active="true"] {
+    background-color: #0db00a;
+    color: #f9f9f9;
+}
+.filter_item[data-color="green"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="green"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="green"][data-active="true"]:hover {
+    background-color: #098007;
+}
+body[data-theme="dark"] .filter_item[data-color="green"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="red"] {
+    border-color: #ff3a3a;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="red"] > div.filter_icon {
+    background-color: #ff3a3a;
+}
+.filter_item[data-color="red"] > span.filter_icon {
+    color: #ff3a3a;
+}
+.filter_item[data-color="red"]:hover {
+    background-color: #ff3a3a;
+}
+.filter_item[data-color="red"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="red"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="red"][data-active="true"] {
+    background-color: #ff3a3a;
+    color: #f9f9f9;
+}
+.filter_item[data-color="red"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="red"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="red"][data-active="true"]:hover {
+    background-color: #ff0707;
+}
+body[data-theme="dark"] .filter_item[data-color="red"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="black"] {
+    border-color: #272727;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="black"] > div.filter_icon {
+    background-color: #272727;
+}
+.filter_item[data-color="black"] > span.filter_icon {
+    color: #272727;
+}
+.filter_item[data-color="black"]:hover {
+    background-color: #272727;
+}
+.filter_item[data-color="black"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="black"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="black"][data-active="true"] {
+    background-color: #272727;
+    color: #f9f9f9;
+}
+.filter_item[data-color="black"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="black"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="black"][data-active="true"]:hover {
+    background-color: #0e0e0e;
+}
+body[data-theme="dark"] .filter_item[data-color="black"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="dark"] {
+    border-color: #121212;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="dark"] > div.filter_icon {
+    background-color: #121212;
+}
+.filter_item[data-color="dark"] > span.filter_icon {
+    color: #121212;
+}
+.filter_item[data-color="dark"]:hover {
+    background-color: #121212;
+}
+.filter_item[data-color="dark"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="dark"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="dark"][data-active="true"] {
+    background-color: #121212;
+    color: #f9f9f9;
+}
+.filter_item[data-color="dark"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="dark"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="dark"][data-active="true"]:hover {
+    background-color: black;
+}
+body[data-theme="dark"] .filter_item[data-color="dark"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="white"] {
+    border-color: #ffffff;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="white"] > div.filter_icon {
+    background-color: #ffffff;
+}
+.filter_item[data-color="white"] > span.filter_icon {
+    color: #ffffff;
+}
+.filter_item[data-color="white"]:hover {
+    background-color: #ffffff;
+}
+.filter_item[data-color="white"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="white"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="white"][data-active="true"] {
+    background-color: #ffffff;
+    color: #f9f9f9;
+}
+.filter_item[data-color="white"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="white"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="white"][data-active="true"]:hover {
+    background-color: #e6e6e6;
+}
+body[data-theme="dark"] .filter_item[data-color="white"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="offwhite"] {
+    border-color: #f9f9f9;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="offwhite"] > div.filter_icon {
+    background-color: #f9f9f9;
+}
+.filter_item[data-color="offwhite"] > span.filter_icon {
+    color: #f9f9f9;
+}
+.filter_item[data-color="offwhite"]:hover {
+    background-color: #f9f9f9;
+}
+.filter_item[data-color="offwhite"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="offwhite"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="offwhite"][data-active="true"] {
+    background-color: #f9f9f9;
+    color: #f9f9f9;
+}
+.filter_item[data-color="offwhite"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="offwhite"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="offwhite"][data-active="true"]:hover {
+    background-color: #e0e0e0;
+}
+body[data-theme="dark"] .filter_item[data-color="offwhite"] {
+    color: #f9f9f9;
+}
+.filter_item[data-color="orange"] {
+    border-color: #ff7b47;
+    color: var(--fontcolor);
+}
+.filter_item[data-color="orange"] > div.filter_icon {
+    background-color: #ff7b47;
+}
+.filter_item[data-color="orange"] > span.filter_icon {
+    color: #ff7b47;
+}
+.filter_item[data-color="orange"]:hover {
+    background-color: #ff7b47;
+}
+.filter_item[data-color="orange"]:hover > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="orange"]:hover > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="orange"][data-active="true"] {
+    background-color: #ff7b47;
+    color: #f9f9f9;
+}
+.filter_item[data-color="orange"][data-active="true"] > div.filter_icon {
+    background-color: var(--background);
+}
+.filter_item[data-color="orange"][data-active="true"] > span.filter_icon {
+    color: var(--background);
+}
+.filter_item[data-color="orange"][data-active="true"]:hover {
+    background-color: #ff5614;
+}
+body[data-theme="dark"] .filter_item[data-color="orange"] {
+    color: #f9f9f9;
+}
